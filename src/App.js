@@ -1,18 +1,21 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Menu } from './Components/Menu/Menu';
 import {HomePage} from './Pages/HomePage'
-import { ClothesPage } from './Pages/ClothesPage';
+import { ClothesPage } from './Pages/ClothesPAge';
 import {ElectronicsPage} from './Pages/ElectronicsPage'
 import {FurniturePage} from './Pages/FurniturePage'
 import {ToysPage} from './Pages/ToysPage'
 import {OthersPage} from './Pages/OthersPage'
 import {NotFoundPage} from './Pages/NotFoundPage'
-
-
-
+import { useEffect } from 'react';
 
 
 function App() {
+
+ 
+
+
+
   return (
     <>
       <HashRouter>
