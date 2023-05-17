@@ -12,6 +12,8 @@
 }
 .product-card{
     width: var(--card-size-desktop);
+    height: 23rem;
+    max-height: 23rem;
     
   
 }

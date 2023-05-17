@@ -4,8 +4,10 @@ function SkeletonLoading() {
     return (
         <>
             {arrayLoading.map(item =>
-
-                <div className="skeleton-container">
+                
+                <div className="skeleton-container"
+                    key={item}
+                >
                     <div className="skeleton-img"></div>
                     <div className="skeleton-detail"></div>
                 </div>
