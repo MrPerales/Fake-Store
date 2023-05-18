@@ -7,15 +7,10 @@ import {FurniturePage} from './Pages/FurniturePage'
 import {ToysPage} from './Pages/ToysPage'
 import {OthersPage} from './Pages/OthersPage'
 import {NotFoundPage} from './Pages/NotFoundPage'
-import { useEffect } from 'react';
-
 
 function App() {
 
  
-
-
-
   return (
     <>
       <HashRouter>

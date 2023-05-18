@@ -7,7 +7,7 @@ const idCategory = 1
 const API = `https://api.escuelajs.co/api/v1/categories/${idCategory}/products`
 function ClothesPage() {
 
-    const { data, loading, error } = useFetch(API);
+    const { data, loading, error,openModal,setOpenModal } = useFetch(API);
 
     console.log(data);
 
@@ -20,6 +20,8 @@ function ClothesPage() {
                     {error && <NotFoundPage />}
                     {data?.map((item) => (
                         <Card
+                        setOpenModal={setOpenModal}
+                            openModal={openModal}
                             key={item.id}
                             item={item}
                         />
