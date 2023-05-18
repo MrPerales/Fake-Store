@@ -3,11 +3,18 @@ import { useFetch } from "../useFetch";
 import { SkeletonLoading } from "../Components/SkeletonLoading/SkeletonLoading";
 import { Card } from "../Components/Cards/card";
 import { NotFoundPage } from "./NotFoundPage";
+import { Modal } from "../Components/Modal/Modal";
+import { CardDetail } from "../Components/CardDetail/CardDetail";
+
 const idCategory=3;
 const API = `https://api.escuelajs.co/api/v1/categories/${idCategory}/products`
 
-function FurniturePage(){
-    const { data, loading, error } = useFetch(API);
+function FurniturePage({setProductDetails,productDetails}){
+
+    
+    const { data, loading, error,openModal,setOpenModal } = useFetch(API);
+
+
     return(
         <>
 
@@ -17,6 +24,10 @@ function FurniturePage(){
                     {error && <NotFoundPage />}
                     {data?.map((item) => (
                         <Card
+                            setOpenModal={setOpenModal}
+                            openModal={openModal}
+                            setProductDetails={setProductDetails}
+                            productDetails={productDetails}
                             key={item.id}
                             item={item}
                         />
@@ -24,6 +35,17 @@ function FurniturePage(){
 
                 </div>
             </section>
+
+            {/* Modal render */}
+            {openModal && (
+                <Modal>
+                    <CardDetail
+                        setOpenModal={setOpenModal}
+                        setProductDetails={setProductDetails}
+                        productDetails={productDetails}
+                    />
+                </Modal>
+            )}
         </>
     )
 }

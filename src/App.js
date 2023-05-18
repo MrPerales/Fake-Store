@@ -1,3 +1,4 @@
+import React from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Menu } from './Components/Menu/Menu';
 import {HomePage} from './Pages/HomePage'
@@ -10,6 +11,8 @@ import {NotFoundPage} from './Pages/NotFoundPage'
 
 function App() {
 
+  // get details
+  const [productDetails,setProductDetails]=React.useState({})
  
   return (
     <>
@@ -17,12 +20,36 @@ function App() {
         <Menu/>
 
         <Routes>
-          <Route path='/' element={<HomePage/>}></Route>
-          <Route path='/clothes' element={<ClothesPage/>}></Route>
-          <Route path='/electronics' element={<ElectronicsPage/>}></Route>
-          <Route path='/furniture' element={<FurniturePage/>}></Route>
-          <Route path='/toys' element={<ToysPage/>}></Route>
-          <Route path='/others' element={<OthersPage/>}></Route>
+          <Route path='/' element={<HomePage
+            productDetails={productDetails}
+            setProductDetails={setProductDetails}
+          />}></Route>
+
+          <Route path='/clothes' element={<ClothesPage
+            productDetails={productDetails}
+            setProductDetails={setProductDetails}
+          />}></Route>
+
+          <Route path='/electronics' element={<ElectronicsPage
+            productDetails={productDetails}
+            setProductDetails={setProductDetails}
+          />}></Route>
+
+          <Route path='/furniture' element={<FurniturePage
+            productDetails={productDetails}
+            setProductDetails={setProductDetails}
+          />}></Route>
+
+          <Route path='/toys' element={<ToysPage
+           productDetails={productDetails}
+            setProductDetails={setProductDetails}
+          />}></Route>
+
+          <Route path='/others' element={<OthersPage
+            productDetails={productDetails}
+            setProductDetails={setProductDetails}
+          />}></Route>
+          
           <Route path='*' element={<NotFoundPage/>}></Route>
 
         </Routes>

@@ -3,11 +3,16 @@ import { useFetch } from "../useFetch";
 import { SkeletonLoading } from "../Components/SkeletonLoading/SkeletonLoading";
 import { Card } from "../Components/Cards/card";
 import { NotFoundPage } from "./NotFoundPage";
+import { Modal } from "../Components/Modal/Modal";
+import { CardDetail } from "../Components/CardDetail/CardDetail";
+
 const idCategory = 5;
 const API = `https://api.escuelajs.co/api/v1/categories/${idCategory}/products`
-function OthersPage() {
 
-    const { data, loading, error } = useFetch(API);
+
+function OthersPage({productDetails,setProductDetails}) {
+
+    const { data, loading, error,openModal,setOpenModal } = useFetch(API);
 
     return (
         <>
@@ -18,6 +23,10 @@ function OthersPage() {
                     {error && <NotFoundPage />}
                     {data?.map((item) => (
                         <Card
+                            setOpenModal={setOpenModal}
+                            openModal={openModal}
+                            setProductDetails={setProductDetails}
+                            productDetails={productDetails}
                             key={item.id}
                             item={item}
                         />
@@ -25,6 +34,17 @@ function OthersPage() {
 
                 </div>
             </section>
+
+            {/* Modal Render  */}
+            {openModal && (
+                <Modal>
+                    <CardDetail
+                        setOpenModal={setOpenModal}
+                        setProductDetails={setProductDetails}
+                        productDetails={productDetails}
+                    />
+                </Modal>
+            )}
         </>
     )
 }

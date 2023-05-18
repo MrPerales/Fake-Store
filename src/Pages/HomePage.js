@@ -8,11 +8,11 @@ import { Modal } from "../Components/Modal/Modal";
 
 const API = 'https://api.escuelajs.co/api/v1/products';
 
-function HomePage() {
+function HomePage({productDetails,setProductDetails}) {
 
     const { data, loading, error, setOpenModal, openModal} = useFetch(API);
-    // get details
-    const [productDetails,setProductDetails]=React.useState({})
+    // // get details
+    // const [productDetails,setProductDetails]=React.useState({})
 
     return (
         <>
@@ -34,6 +34,8 @@ function HomePage() {
 
                 </div>
             </section>
+            
+            {/* Modal render */}
 
             {openModal && (
                 <Modal>
