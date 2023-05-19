@@ -10,7 +10,7 @@ function ShoppingCar({setOpenCar}) {
 
     return (
         <>
-            <aside className="product-datail">
+            <aside className="product-datail-car">
                 <div className="my-order-container">
                     <div className="icon-title">
                         <img
