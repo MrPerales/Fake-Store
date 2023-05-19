@@ -8,16 +8,23 @@ import {FurniturePage} from './Pages/FurniturePage'
 import {ToysPage} from './Pages/ToysPage'
 import {OthersPage} from './Pages/OthersPage'
 import {NotFoundPage} from './Pages/NotFoundPage'
+import { ShoppingCar } from './Components/ShoppingCar/ShoppingCar';
 
 function App() {
 
   // get details
   const [productDetails,setProductDetails]=React.useState({})
- 
+  //open List Car
+  const [openCar,setOpenCar]=React.useState(false);
+  
+
   return (
     <>
       <HashRouter>
-        <Menu/>
+        <Menu
+          openCar={openCar}
+          setOpenCar={setOpenCar}
+        />
 
         <Routes>
           <Route path='/' element={<HomePage
@@ -49,13 +56,13 @@ function App() {
             productDetails={productDetails}
             setProductDetails={setProductDetails}
           />}></Route>
-          
+
           <Route path='*' element={<NotFoundPage/>}></Route>
 
         </Routes>
 
 
-
+      
 
 
       </HashRouter>

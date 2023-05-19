@@ -1,0 +1,65 @@
+.product-datail{
+   
+    width: 36rem;
+    position: absolute;
+    right: 0; 
+    margin: 0rem 1rem 0rem 1rem;   
+    background-color: rgba(255,255,255,.8);
+    
+}
+.flechita{
+    width: 2rem;
+    height:2rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.my-order-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+    /* width: 100vw; */
+    width: 36rem;
+}
+.my-order-content{
+    display: grid;
+    gap: 1.6rem;
+}
+.articulos{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--text-input-field);
+    height: 5rem;
+    align-items: center;
+    padding: 0rem 1rem 0rem 1rem;
+    border-radius: 1rem;
+    margin: 0 1rem;
+}
+.description p:first-child,.total-a-pagar p{
+    font-size: var(--sm);
+    font-weight: bold;
+}
+.icon-container{
+    width: var(--card-size-mobile);
+    display: flex;
+
+}
+.icon-container img{
+    width: 50%;
+    border-radius: 50%;
+}
+.shopping-card{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:0rem 2rem 0rem 1rem;
+}
+.title{
+    font-size: var(--lg);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-left: .5rem;
+}
+.icon-title{
+    display: flex;
+    align-items: center;
+}

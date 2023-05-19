@@ -1,52 +1,72 @@
 import React from "react";
 import './Menu.css'
 import { NavLink } from "react-router-dom";
-function Menu() {
+import { ShoppingCar } from "../ShoppingCar/ShoppingCar";
+
+
+function Menu({ openCar, setOpenCar }) {
+    const openListCar = () => {
+        if (openCar) {
+            setOpenCar(false)
+        } else {
+            setOpenCar(true)
+        }
+    }
+
+
     return (
 
-        <header>
-            <nav className="navbar">
 
-                <img src="https://cdn-icons-png.flaticon.com/512/6364/6364542.png" alt="bars" className="figure-logo burgerMenu" />
+        <>
+            <header>
+                <nav className="navbar">
 
-                <div className="nav-left">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6364/6364542.png" alt="bars" className="figure-logo burgerMenu" />
 
-                    <img src="https://www.pngkey.com/png/detail/66-661551_white-blank-shield-logo-school-logo-template-free.png" alt="logo" className="logo" />
+                    <div className="nav-left">
 
-                    <ul className="nav-links">
-                        {/* with Navlink */}
-                        {routes.map(route => (
-                            <li key={route.text}>
-                                <NavLink
-                                    style={({ isActive }) => ({
-                                        color: isActive ? '#ACD9B2' : '#c7c7c7',
-                                    })}
-                                    to={route.to}
-                                >
-                                    {route.text}
-                                </NavLink>
+                        <img src="https://www.pngkey.com/png/detail/66-661551_white-blank-shield-logo-school-logo-template-free.png" alt="logo" className="logo" />
+
+                        <ul className="nav-links">
+                            {/* with Navlink */}
+                            {routes.map(route => (
+                                <li key={route.text}>
+                                    <NavLink
+                                        style={({ isActive }) => ({
+                                            color: isActive ? '#ACD9B2' : '#c7c7c7',
+                                        })}
+                                        to={route.to}
+                                    >
+                                        {route.text}
+                                    </NavLink>
+                                </li>
+
+
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="nav-right">
+                        <ul>
+                            <li className="navbar-Email">Example@example.com</li>
+                            <li className="navbar-carrito-icon" onClick={openListCar} >
+                                <img
+                                    src="https://icons.veryicon.com/png/o/transport/vehicle-management-icon-library/add-vehicles.png"
+                                    alt="icon-add-car"
+                                    className="icon-car"
+                                />
+
                             </li>
 
+                        </ul>
 
-                        ))}
-                    </ul>
-                </div>
-                <div className="nav-right">
-                    <ul>
-                        <li className="navbar-Email">Example@example.com</li>
-                        <li className="navbar-carrito-icon" >
-                            <img src="https://icons.veryicon.com/png/o/transport/vehicle-management-icon-library/add-vehicles.png" alt="icon-add-car" className="icon-car" />
-
-                        </li>
-
-                    </ul>
-
-                </div>
+                    </div>
 
 
-            </nav>
-        </header>
-
+                </nav>
+            </header>
+            
+            {openCar &&  <ShoppingCar setOpenCar={setOpenCar}/>}
+        </>
     );
 }
 //////// Array Routes//////
