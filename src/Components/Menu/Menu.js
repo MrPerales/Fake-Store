@@ -2,17 +2,29 @@ import React from "react";
 import './Menu.css'
 import { NavLink } from "react-router-dom";
 import { ShoppingCar } from "../ShoppingCar/ShoppingCar";
+import { MenuDesktop } from "../MenuDesktop/MenuDesktop";
 
 
 function Menu({ openCar, setOpenCar }) {
+    const [menuAccount,setMenuAccount]=React.useState(false)
+
     const openListCar = () => {
         if (openCar) {
-            setOpenCar(false)
+            setOpenCar(false);
         } else {
             setOpenCar(true)
+            setMenuAccount(false);
         }
     }
-
+    const openMenuAccount=()=>{
+        if (menuAccount) {
+            setMenuAccount(false)
+            
+        } else {
+            setMenuAccount(true)
+            setOpenCar(false)
+        }
+    }
 
     return (
 
@@ -21,11 +33,19 @@ function Menu({ openCar, setOpenCar }) {
             <header>
                 <nav className="navbar">
 
-                    <img src="https://cdn-icons-png.flaticon.com/512/6364/6364542.png" alt="bars" className="figure-logo burgerMenu" />
+                    <img 
+                        src="https://cdn-icons-png.flaticon.com/512/6364/6364542.png"
+                        alt="bars"
+                        className="figure-logo burgerMenu" 
+                    />
 
                     <div className="nav-left">
 
-                        <img src="https://www.pngkey.com/png/detail/66-661551_white-blank-shield-logo-school-logo-template-free.png" alt="logo" className="logo" />
+                        <img 
+                            src="https://www.pngkey.com/png/detail/66-661551_white-blank-shield-logo-school-logo-template-free.png" 
+                            alt="logo" 
+                            className="logo"
+                        />
 
                         <ul className="nav-links">
                             {/* with Navlink */}
@@ -47,7 +67,7 @@ function Menu({ openCar, setOpenCar }) {
                     </div>
                     <div className="nav-right">
                         <ul>
-                            <li className="navbar-Email">Example@example.com</li>
+                            <li className="navbar-Email" onClick={openMenuAccount}>Example@example.com</li>
                             <li className="navbar-carrito-icon" onClick={openListCar} >
                                 <img
                                     src="https://icons.veryicon.com/png/o/transport/vehicle-management-icon-library/add-vehicles.png"
@@ -66,6 +86,7 @@ function Menu({ openCar, setOpenCar }) {
             </header>
             
             {openCar &&  <ShoppingCar setOpenCar={setOpenCar}/>}
+            {menuAccount && <MenuDesktop/>}
         </>
     );
 }

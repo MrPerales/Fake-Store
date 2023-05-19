@@ -8,7 +8,7 @@ import {FurniturePage} from './Pages/FurniturePage'
 import {ToysPage} from './Pages/ToysPage'
 import {OthersPage} from './Pages/OthersPage'
 import {NotFoundPage} from './Pages/NotFoundPage'
-import { ShoppingCar } from './Components/ShoppingCar/ShoppingCar';
+import { MenuDesktop } from './Components/MenuDesktop/MenuDesktop';
 
 function App() {
 
@@ -56,12 +56,19 @@ function App() {
             productDetails={productDetails}
             setProductDetails={setProductDetails}
           />}></Route>
+          
+          {/* Routes to Account */}
+            <Route path='/my-account' element={<></>}/>
+            <Route path='/my-orders' element={<></>}/>
+            <Route path='/login' element={<></>}/>
 
+
+          {/* Route to notFoundPage */}
           <Route path='*' element={<NotFoundPage/>}></Route>
 
         </Routes>
 
-
+      
       
 
 

@@ -50,3 +50,6 @@
     font-size: var(--sm);
     margin-right: 1.5rem;
 }
+.navbar-Email{
+    cursor: pointer;
+}
