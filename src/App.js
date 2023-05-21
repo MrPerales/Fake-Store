@@ -9,6 +9,7 @@ import {ToysPage} from './Pages/ToysPage'
 import {OthersPage} from './Pages/OthersPage'
 import {NotFoundPage} from './Pages/NotFoundPage'
 import { AccountPage } from './Pages/AccountPage';
+import { MyOrderPage } from './Pages/MyOrderPage';
 
 function App() {
 
@@ -63,7 +64,7 @@ function App() {
           
           {/* Routes to Account */}
             <Route path='/my-account' element={<AccountPage/>}/>
-            <Route path='/my-orders' element={<></>}/>
+            <Route path='/my-orders' element={<MyOrderPage/>}/>
             <Route path='/login' element={<></>}/>
 
 
