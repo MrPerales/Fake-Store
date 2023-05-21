@@ -7,6 +7,7 @@
     padding: .5rem;
     position: absolute;
     right: 7rem;
+    background-color: #fff;
 }
 .menu ul li{
     list-style: none;

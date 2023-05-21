@@ -5,8 +5,7 @@ import { ShoppingCar } from "../ShoppingCar/ShoppingCar";
 import { MenuDesktop } from "../MenuDesktop/MenuDesktop";
 
 
-function Menu({ openCar, setOpenCar }) {
-    const [menuAccount,setMenuAccount]=React.useState(false)
+function Menu({ openCar, setOpenCar,menuAccount,setMenuAccount}) {
 
     const openListCar = () => {
         if (openCar) {
@@ -19,7 +18,6 @@ function Menu({ openCar, setOpenCar }) {
     const openMenuAccount=()=>{
         if (menuAccount) {
             setMenuAccount(false)
-            
         } else {
             setMenuAccount(true)
             setOpenCar(false)

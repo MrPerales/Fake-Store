@@ -8,7 +8,7 @@ import {FurniturePage} from './Pages/FurniturePage'
 import {ToysPage} from './Pages/ToysPage'
 import {OthersPage} from './Pages/OthersPage'
 import {NotFoundPage} from './Pages/NotFoundPage'
-import { MenuDesktop } from './Components/MenuDesktop/MenuDesktop';
+import { AccountPage } from './Pages/AccountPage';
 
 function App() {
 
@@ -16,6 +16,8 @@ function App() {
   const [productDetails,setProductDetails]=React.useState({})
   //open List Car
   const [openCar,setOpenCar]=React.useState(false);
+  //open MenuAccount 
+  const [menuAccount,setMenuAccount]=React.useState(false)
   
 
   return (
@@ -24,6 +26,8 @@ function App() {
         <Menu
           openCar={openCar}
           setOpenCar={setOpenCar}
+          menuAccount={menuAccount}
+          setMenuAccount={setMenuAccount}
         />
 
         <Routes>
@@ -58,7 +62,7 @@ function App() {
           />}></Route>
           
           {/* Routes to Account */}
-            <Route path='/my-account' element={<></>}/>
+            <Route path='/my-account' element={<AccountPage/>}/>
             <Route path='/my-orders' element={<></>}/>
             <Route path='/login' element={<></>}/>
 
