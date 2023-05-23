@@ -10,6 +10,7 @@ import {OthersPage} from './Pages/OthersPage'
 import {NotFoundPage} from './Pages/NotFoundPage'
 import { AccountPage } from './Pages/AccountPage';
 import { MyOrderPage } from './Pages/MyOrderPage';
+import { LoginPage } from './Pages/LoginPage';
 
 function App() {
 
@@ -65,7 +66,7 @@ function App() {
           {/* Routes to Account */}
             <Route path='/my-account' element={<AccountPage/>}/>
             <Route path='/my-orders' element={<MyOrderPage/>}/>
-            <Route path='/login' element={<></>}/>
+            <Route path='/login' element={<LoginPage/>}/>
 
 
           {/* Route to notFoundPage */}
