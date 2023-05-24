@@ -26,10 +26,10 @@
 .icon-container{
     width: 3rem;
 }
-.icon-container img{
-    width: 100%;
-    
+.icon-car{
+    font-size: 2.5rem;
 }
+
 .div-especificaciones{
     display: flex;
     justify-content: space-between;
