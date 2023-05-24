@@ -3,9 +3,11 @@ import './Menu.css'
 import { NavLink } from "react-router-dom";
 import { ShoppingCar } from "../ShoppingCar/ShoppingCar";
 import { MenuDesktop } from "../MenuDesktop/MenuDesktop";
+import { Context } from "../../context";
 
 
-function Menu({ openCar, setOpenCar,menuAccount,setMenuAccount}) {
+function Menu() {
+  const {menuAccount,setMenuAccount,openCar,setOpenCar}=React.useContext(Context)
 
     const openListCar = () => {
         if (openCar) {

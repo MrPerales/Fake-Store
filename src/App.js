@@ -14,54 +14,19 @@ import { LoginPage } from './Pages/LoginPage';
 
 function App() {
 
-  // get details
-  const [productDetails,setProductDetails]=React.useState({})
-  //open List Car
-  const [openCar,setOpenCar]=React.useState(false);
-  //open MenuAccount 
-  const [menuAccount,setMenuAccount]=React.useState(false)
-  
 
   return (
     <>
       <HashRouter>
-        <Menu
-          openCar={openCar}
-          setOpenCar={setOpenCar}
-          menuAccount={menuAccount}
-          setMenuAccount={setMenuAccount}
-        />
+        <Menu/>
 
         <Routes>
-          <Route path='/' element={<HomePage
-            productDetails={productDetails}
-            setProductDetails={setProductDetails}
-          />}></Route>
-
-          <Route path='/clothes' element={<ClothesPage
-            productDetails={productDetails}
-            setProductDetails={setProductDetails}
-          />}></Route>
-
-          <Route path='/electronics' element={<ElectronicsPage
-            productDetails={productDetails}
-            setProductDetails={setProductDetails}
-          />}></Route>
-
-          <Route path='/furniture' element={<FurniturePage
-            productDetails={productDetails}
-            setProductDetails={setProductDetails}
-          />}></Route>
-
-          <Route path='/toys' element={<ToysPage
-           productDetails={productDetails}
-            setProductDetails={setProductDetails}
-          />}></Route>
-
-          <Route path='/others' element={<OthersPage
-            productDetails={productDetails}
-            setProductDetails={setProductDetails}
-          />}></Route>
+          <Route path='/' element={<HomePage/>}></Route>
+          <Route path='/clothes' element={<ClothesPage/>}></Route>
+          <Route path='/electronics' element={<ElectronicsPage/>}></Route>
+          <Route path='/furniture' element={<FurniturePage/>}></Route>
+          <Route path='/toys' element={<ToysPage/>}></Route>
+          <Route path='/others' element={<OthersPage/>}></Route>
           
           {/* Routes to Account */}
             <Route path='/my-account' element={<AccountPage/>}/>

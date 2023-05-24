@@ -5,14 +5,17 @@ import { Card } from "../Components/Cards/card";
 import { NotFoundPage } from "./NotFoundPage";
 import { Modal } from "../Components/Modal/Modal";
 import { CardDetail } from "../Components/CardDetail/CardDetail";
+import { Context } from "../context";
 
 const idCategory = 5;
 const API = `https://api.escuelajs.co/api/v1/categories/${idCategory}/products`
 
 
-function OthersPage({productDetails,setProductDetails}) {
+function OthersPage() {
 
     const { data, loading, error,openModal,setOpenModal } = useFetch(API);
+    const { productDetails, setProductDetails } = React.useContext(Context);
+
 
     return (
         <>

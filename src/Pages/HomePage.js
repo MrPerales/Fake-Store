@@ -5,14 +5,16 @@ import { SkeletonLoading } from "../Components/SkeletonLoading/SkeletonLoading";
 import { NotFoundPage } from "./NotFoundPage";
 import { CardDetail } from "../Components/CardDetail/CardDetail";
 import { Modal } from "../Components/Modal/Modal";
+import { Context } from "../context";
 
 const API = 'https://api.escuelajs.co/api/v1/products';
 
-function HomePage({productDetails,setProductDetails}) {
+function HomePage() {
 
-    const { data, loading, error, setOpenModal, openModal} = useFetch(API);
-    // // get details
-    // const [productDetails,setProductDetails]=React.useState({})
+    const { data, loading, error, setOpenModal, openModal } = useFetch(API);
+    
+    const { productDetails, setProductDetails } = React.useContext(Context)
+
 
     return (
         <>
@@ -34,7 +36,7 @@ function HomePage({productDetails,setProductDetails}) {
 
                 </div>
             </section>
-            
+
             {/* Modal render */}
 
             {openModal && (
