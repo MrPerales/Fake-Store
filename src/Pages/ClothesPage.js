@@ -1,11 +1,11 @@
 import React from "react";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../Hooks/useFetch";
 import { SkeletonLoading } from "../Components/SkeletonLoading/SkeletonLoading";
 import { Card } from "../Components/Cards/card";
 import { NotFoundPage } from "./NotFoundPage";
 import { Modal } from "../Components/Modal/Modal";
 import { CardDetail } from "../Components/CardDetail/CardDetail";
-import { Context } from "../context";
+import { Context } from "../Context/context";
 
 
 const idCategory = 1

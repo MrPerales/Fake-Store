@@ -1,8 +1,8 @@
-import React, { createContext } from "react";
+import React from "react";
 
 // 1.- creamos el contexto 
 // Este es el que tenemos que consumir  
-const Context = createContext();
+const Context = React.createContext();
 
 // 2.- Creamos el Provider para porveer el contexto 
 // este es el que nos provee acceso al acontexto 

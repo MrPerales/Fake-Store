@@ -9,14 +9,14 @@ function useFetch(url){
     const [openModal,setOpenModal]=React.useState(false);
  
 
-    // React.useEffect(() => {
-    //     setLoading(true);
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setData(data))
-    //         .catch(error => setError(error))
-    //         .finally(()=>setLoading(false))
-    // }, [])
+    React.useEffect(() => {
+        setLoading(true);
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setData(data))
+            .catch(error => setError(error))
+            .finally(()=>setLoading(false))
+    }, [])
     
 
     return {data, loading,error,openModal,setOpenModal};

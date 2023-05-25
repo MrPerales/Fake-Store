@@ -3,7 +3,7 @@ import './Menu.css'
 import { NavLink } from "react-router-dom";
 import { ShoppingCar } from "../ShoppingCar/ShoppingCar";
 import { MenuDesktop } from "../MenuDesktop/MenuDesktop";
-import { Context } from "../../context";
+import { Context } from "../../Context/context";
 
 
 function Menu() {

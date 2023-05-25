@@ -1,6 +1,8 @@
 import React from "react";
 import './card.css'
 import { BsFillCartPlusFill } from 'react-icons/bs'
+import { useCart } from "../../Hooks/useCart";
+
 function Card({ item, openModal, setOpenModal, setProductDetails }) {
 
     const onClickDetail = () => {
@@ -15,11 +17,12 @@ function Card({ item, openModal, setOpenModal, setProductDetails }) {
             setOpenModal(true);
         }
 
-
     }
     const urlImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png'
     const img = item.images[1] || urlImage;
 
+    const { addToCart } = useCart();
+    // console.log(addToCart);
     return (
         <>
             <div className="product-card">
@@ -33,7 +36,10 @@ function Card({ item, openModal, setOpenModal, setProductDetails }) {
                         <p className="precio">{item.price}</p>
                         <p className="product-name">{item.title}</p>
                     </div>
-                    <BsFillCartPlusFill className="icon-car"></BsFillCartPlusFill>
+                    <button className="icon-car" onClick={() => addToCart(item)}>
+                        <BsFillCartPlusFill/>
+
+                    </button>
                 </div>
             </div>
 

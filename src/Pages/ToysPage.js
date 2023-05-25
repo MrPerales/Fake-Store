@@ -1,5 +1,5 @@
 import React from "react";
-import { Context } from "../context";
+import { Context } from "../Context/context";
 
 function ToysPage(){
     const { productDetails, setProductDetails } = React.useContext(Context)

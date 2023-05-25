@@ -11,13 +11,15 @@ import {NotFoundPage} from './Pages/NotFoundPage'
 import { AccountPage } from './Pages/AccountPage';
 import { MyOrderPage } from './Pages/MyOrderPage';
 import { LoginPage } from './Pages/LoginPage';
+import { CartProvider } from './Context/CartContext';
 
 function App() {
 
 
   return (
-    <>
+    <CartProvider>
       <HashRouter>
+        
         <Menu/>
 
         <Routes>
@@ -44,7 +46,7 @@ function App() {
 
 
       </HashRouter>
-    </>
+    </CartProvider>
   );
 }
 

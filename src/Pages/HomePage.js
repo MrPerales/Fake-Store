@@ -1,11 +1,11 @@
 import React from "react";
 import { Card } from "../Components/Cards/card";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../Hooks/useFetch";
 import { SkeletonLoading } from "../Components/SkeletonLoading/SkeletonLoading";
 import { NotFoundPage } from "./NotFoundPage";
 import { CardDetail } from "../Components/CardDetail/CardDetail";
 import { Modal } from "../Components/Modal/Modal";
-import { Context } from "../context";
+import { Context } from "../Context/context";
 
 const API = 'https://api.escuelajs.co/api/v1/products';
 
