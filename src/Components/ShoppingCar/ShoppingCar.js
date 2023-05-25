@@ -1,13 +1,41 @@
 import React from "react";
 import './shoppingCar.css';
+import { BsFillCartXFill } from 'react-icons/bs'
+import { useCart } from "../../Hooks/useCart";
 
+function ProductCart({ product, removeFromCart }) {
+    return (
+        <>
+            <div className="productCart">
 
-function ShoppingCar({setOpenCar}) {
+                {console.log(product.title, 'title')}
 
-    const closeCar=()=>{
+                <img
+                    src={product.images[1]}
+                    alt={product.title}
+                    className="productoCart"
+                />
+                <p>{product.title}</p>
+                <p>$ {product.price}</p>
+
+                <button className="removedIcon" onClick={() => { removeFromCart(product) }}>
+                    <BsFillCartXFill />
+                </button>
+            </div>
+        </>
+    );
+}
+
+function ShoppingCar({ setOpenCar }) {
+
+    const { removeFromCart, cart } = useCart();
+    // const { productDetails, setProductDetails } = React.useContext(Context)
+
+    const closeCar = () => {
         setOpenCar(false);
     }
-
+    console.log(cart, 'cart');
+    // console.log(cart[0].id, 'id');
     return (
         <>
             <aside className="product-datail-car">
@@ -25,24 +53,20 @@ function ShoppingCar({setOpenCar}) {
                     <div className="my-order-content">
 
                         <div className="shopping-card">
-                            <figure className="icon-container">
-                                <img
-                                    src="https://i.seadn.io/gae/uAJta1YRdB-fhq0Z1ZKB6SuOirVng9PyExwdEZu2Rl7uxDN_YLqgKI-L3egZZ0kWevHSsKVWd3MwOlLdtiDuVnknjcYoyBXTFCUQ?auto=format&w=1000"
-                                    alt="producto"
-                                    className="producto-img"
-                                />
-                            </figure>
-                            <p>$120.00</p>
-                        </div>
-                        <div className="articulos">
-                            <div className="description">
-                                <p>Total</p>
-                            </div>
-                            <div className="total-a-pagar">
-                                <p>$ 560.00</p>
-                            </div>
-                        </div>
 
+                            <ul>
+
+                                {cart.map(item => (
+                                    <ProductCart
+                                        product={item}
+                                        removeFromCart={removeFromCart}
+                                    />
+                                ))}
+
+                            </ul>
+
+
+                        </div>
                         <button className="primary-button">
                             Checkout
                         </button>
@@ -58,4 +82,4 @@ function ShoppingCar({setOpenCar}) {
     );
 }
 
-export {ShoppingCar}
+export { ShoppingCar }

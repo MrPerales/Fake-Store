@@ -1,7 +1,11 @@
 import React from "react";
 import './cardDetail.css'
+import { BsFillCartPlusFill } from 'react-icons/bs'
+import { useCart } from "../../Hooks/useCart";
+
 
 function CardDetail({ setOpenModal,productDetails}) {
+    const { addToCart } = useCart();
     
     const closeModal = () => {
         setOpenModal(false);
@@ -28,13 +32,17 @@ function CardDetail({ setOpenModal,productDetails}) {
                     <p>{details.title}</p>
                     <p>{details.description}</p>
 
-                    <button className="primary-button add-to-car-button">
+                    {/* <button className="primary-button add-to-car-button">
                         <img
                             src="https://icons.veryicon.com/png/o/transport/vehicle-management-icon-library/add-vehicles.png"
                             alt="icon-add-car"
                             className="icon-car"
                         />
                         Add to cart
+                    </button> */}
+                    <button className="primary-button add-to-car-button" onClick={() => addToCart(details)}>
+                        Add to cart  <BsFillCartPlusFill />
+                        
                     </button>
                 </div>
             </aside>

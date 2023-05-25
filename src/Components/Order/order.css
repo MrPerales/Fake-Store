@@ -56,12 +56,12 @@
     align-items: center;
     padding:0rem 2rem 0rem 1rem;
 }
-.icon-container::after{
+/* .icon-container::after{
     content: "Sad Cheems";
     align-self: center;
     padding-left: 1rem;
     font-weight: 300;
-}
+} */
 @media(min-width:640px) {
     .my-order-container{
     width: 35rem;
