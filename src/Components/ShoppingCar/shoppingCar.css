@@ -46,7 +46,10 @@
     align-items: center;
     gap: 1rem;
     padding: .5rem;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+    /* background-color: var(--text-input-field); */
+    /* border-radius: 1rem;
+    margin-bottom: .5rem; */
 }
 .productoCart{
     width:25%;

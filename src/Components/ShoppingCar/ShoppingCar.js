@@ -2,13 +2,15 @@ import React from "react";
 import './shoppingCar.css';
 import { BsFillCartXFill } from 'react-icons/bs'
 import { useCart } from "../../Hooks/useCart";
+import { useLocalStorage } from "../../Hooks/useLocalStorage";
 
 function ProductCart({ product, removeFromCart }) {
+
     return (
         <>
             <div className="productCart">
 
-                {console.log(product.title, 'title')}
+                {/* {console.log(product.title, 'title')} */}
 
                 <img
                     src={product.images[1]}
@@ -28,13 +30,13 @@ function ProductCart({ product, removeFromCart }) {
 
 function ShoppingCar({ setOpenCar }) {
 
-    const { removeFromCart, cart } = useCart();
+    const { removeFromCart ,cart} = useCart();
     // const { productDetails, setProductDetails } = React.useContext(Context)
 
     const closeCar = () => {
         setOpenCar(false);
     }
-    console.log(cart, 'cart');
+    // console.log(cart, 'cart');
     // console.log(cart[0].id, 'id');
     return (
         <>
@@ -58,6 +60,7 @@ function ShoppingCar({ setOpenCar }) {
 
                                 {cart.map(item => (
                                     <ProductCart
+                                        key={item.id}
                                         product={item}
                                         removeFromCart={removeFromCart}
                                     />
